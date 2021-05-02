@@ -1,0 +1,10 @@
+import game.RacingGame;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        RacingGame racingGame = new RacingGame();
+        racingGame.playGame();
+    }
+}

@@ -20,7 +20,6 @@ class NamesTest {
     @DisplayName("이름 문자열이 쉼표로 구분할수 없는 형태로 주어질 경우 예외 확인")
     @ParameterizedTest
     @CsvSource({"'aaa.bbb.ccc'"
-                , "''"
                 , "'aaa,,aa'"
                 , "',aaa,bbb,ccc,'"})
     void validateNamesSplitComma(String names) {
@@ -28,5 +27,16 @@ class NamesTest {
             new Names(names);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("이름은 쉼표로 구분되어야합니다.");
+    }
+
+    @DisplayName("이름 문자열에 중복된 이름이 있는지 확인")
+    @ParameterizedTest
+    @CsvSource({"'aaa,bbb,bbb'"
+                , "'a,a,a'"})
+    void validateNamesDuplication(String names) {
+        assertThatThrownBy(() -> {
+            new Names(names).splitNameToArray();
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("중복된 이름이 있습니다.");
     }
 }

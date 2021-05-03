@@ -3,9 +3,8 @@ package car;
 import exception.ExceptionMessage;
 
 public class PositionNumber {
-
     private static final int MIN_LENGTH = 1;
-
+    private static final String HYPHEN = "-";
     private int position;
 
     public PositionNumber(int position) {
@@ -32,7 +31,7 @@ public class PositionNumber {
     public StringBuilder changePositionNumberToHyphen() {
         StringBuilder hyphen = new StringBuilder("");
         for (int i = 0; i < getPosition(); i++) {
-            hyphen.append("-");
+            hyphen.append(HYPHEN);
         }
         return hyphen;
     }

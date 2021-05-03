@@ -17,7 +17,7 @@ public class CarList {
         return this.carList;
     }
 
-    public ArrayList<Car> updateCarListPosition(ArrayList<Car> cars, RacingGameUtils utils){
+    public ArrayList<Car> updateCarListPosition(ArrayList<Car> cars, RacingGameUtils utils) {
         for (int i = 0; i < cars.size(); i++) {
             cars.get(i).insertRandomNumber(utils.createRandomNumber());
         }

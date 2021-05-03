@@ -3,13 +3,8 @@ package car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.RacingGameUtils;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CarListTest {
     private CarList carList;

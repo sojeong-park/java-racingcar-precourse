@@ -9,16 +9,16 @@ public class RacingGameUtils {
     private Scanner scanner;
     private Random random;
 
-    public RacingGameUtils(){
+    public RacingGameUtils() {
         scanner = new Scanner(System.in);
         random = new Random();
     }
-    public String inputNames(){
+    public String inputNames() {
         System.out.println(RacingGameUtilsContent.INPUT_NAMES);
         return scanner.nextLine();
     }
 
-    public String inputGameProgressNumber(){
+    public String inputGameProgressNumber() {
         System.out.println(RacingGameUtilsContent.INPUT_GAME_PROGRESS_NUMBER);
         return scanner.nextLine();
     }
@@ -44,15 +44,15 @@ public class RacingGameUtils {
 
     public void printWinnerList(ArrayList<String> winnerList) {
         for (int i = 0; i < winnerList.size() - 1; i++) {
-            isNotNullWinner(winnerList.get(i),",");
+            isNotNullWinner(winnerList.get(i), ",");
         }
-        isNotNullWinner(winnerList.get(winnerList.size()-1),"");
+        isNotNullWinner(winnerList.get(winnerList.size()-1), "");
         System.out.print(RacingGameUtilsContent.WINNER_PRINT);
     }
 
     public void isNotNullWinner(String winner, String comma) {
-        if (!winner.isEmpty()){
-            System.out.print(winner+comma);
+        if (!winner.isEmpty()) {
+            System.out.print(winner + comma);
         }
     }
 }

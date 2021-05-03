@@ -1,7 +1,6 @@
 package game;
 
 import exception.ExceptionMessage;
-
 import java.util.HashSet;
 import java.util.Set;
 

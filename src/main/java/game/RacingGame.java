@@ -3,17 +3,19 @@ package game;
 import car.Car;
 import utils.RacingGameUtils;
 
+import java.util.Arrays;
+
 public class RacingGame {
     private Names names;
     private GameProgressNumber gameProgressNumber;
-    private RacingGameUtils utils;
+    private RacingGameUtils utils = new RacingGameUtils();
 
     public void playGame() {
         RacingGameUtils gameUtils = new RacingGameUtils();
         String names = gameUtils.inputNames();
         String gameProgressNumber = gameUtils.inputGameProgressNumber();
         setNamesAndGameProgressNumber(names, gameProgressNumber);
-        insertCarsPosition(initGameSetting());
+        startRacingGame();
     }
 
     public void setNamesAndGameProgressNumber(String names, String gameProgressNumber) {
@@ -39,10 +41,17 @@ public class RacingGame {
     }
 
     public void insertCarsPosition(Car[] cars) {
-        utils = new RacingGameUtils();
         for (int i = 0; i < cars.length; i++) {
             cars[i].insertRandomNumber(utils.createRandomNumber());
         }
     }
 
+    public void startRacingGame() {
+        Car[] cars = initGameSetting();
+        utils.printCarInfo(cars);
+        for (int i = 1; i < gameProgressNumber.getGameProgressNumber(); i++) {
+            insertCarsPosition(cars);
+            utils.printCarInfo(cars);
+        }
+    }
 }

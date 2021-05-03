@@ -15,4 +15,8 @@ public class GameProgressNumber {
         }
         this. gameProgressNumber = Integer.parseInt(gameProgressNumber);
     }
+
+    public int getGameProgressNumber() {
+        return this.gameProgressNumber;
+    }
 }

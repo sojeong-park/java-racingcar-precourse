@@ -28,4 +28,12 @@ public class PositionNumber {
             setPosition(this.position + 1);
         }
     }
+
+    public StringBuilder changePositionNumberToHyphen() {
+        StringBuilder hyphen = new StringBuilder("");
+        for (int i = 0; i < getPosition(); i++) {
+            hyphen.append("-");
+        }
+        return hyphen;
+    }
 }

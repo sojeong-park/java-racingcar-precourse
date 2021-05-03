@@ -12,4 +12,9 @@ public class Car {
     public void insertRandomNumber(int position) {
         this.position.checkIncreasePosition(position);
     }
+
+    @Override
+    public String toString() {
+        return name.getName() + ": " + position.changePositionNumberToHyphen().toString();
+    }
 }

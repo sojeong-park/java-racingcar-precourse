@@ -8,4 +8,8 @@ public class Car {
         this.name = new Name(name);
         this.position = new PositionNumber(position);
     }
+
+    public void insertPosition(int position) {
+        this.position.setPosition(position);
+    }
 }

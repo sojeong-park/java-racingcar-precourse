@@ -9,6 +9,14 @@ public class PositionNumber {
     private int position;
 
     public PositionNumber(int position) {
+        setPosition(position);
+    }
+
+    public int getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(int position) {
         if (position < MIN_LENGTH) {
             throw new IllegalArgumentException(ExceptionMessage.POSITION_START_NUMBER);
         }

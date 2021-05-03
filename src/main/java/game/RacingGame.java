@@ -2,6 +2,7 @@ package game;
 
 import car.Car;
 import car.CarList;
+import rank.Rank;
 import utils.RacingGameUtils;
 import java.util.ArrayList;
 
@@ -39,5 +40,7 @@ public class RacingGame {
             carList.updateCarListPosition(cars, new RacingGameUtils());
             utils.printCarInfo(cars);
         }
+        Rank rank = new Rank(carList);
+        utils.printWinnerList(rank.getWinnerList());
     }
 }

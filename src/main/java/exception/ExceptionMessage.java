@@ -8,4 +8,5 @@ public class ExceptionMessage {
     public static final String NAME_LENGTH_LIMIT = "이름은 1이상 5이하 자릿수입니다.";
     public static final String POSITION_START_NUMBER = "초기 위치값은 1부터 시작입니다.";
     public static final String NAMES_DUPLICATE = "중복된 이름이 있습니다.";
+    public static final String RANK_CAR_LIST_NULL = "CarList 객체를 확인해주세요.";
 }

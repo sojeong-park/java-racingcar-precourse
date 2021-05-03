@@ -17,6 +17,10 @@ public class Car {
         return this.name.getName();
     }
 
+    public int getPosition() {
+        return this.position.getPosition();
+    }
+
     public String printCarInfo() {
         return getName() + ": " + position.changePositionNumberToHyphen().toString();
     }

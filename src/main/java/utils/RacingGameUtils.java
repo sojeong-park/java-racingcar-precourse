@@ -1,7 +1,6 @@
 package utils;
 
 import car.Car;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -25,9 +24,9 @@ public class RacingGameUtils {
     }
 
     public int createRandomNumber() {
-        int randomNumber = random.nextInt(9)+1;
+        int randomNumber = random.nextInt(9) + 1;
         while (!validRandomNumber(randomNumber)) {
-            randomNumber = random.nextInt(9)+1;
+            randomNumber = random.nextInt(9) + 1;
         }
         return random.nextInt(9)+1;
     }
@@ -41,5 +40,19 @@ public class RacingGameUtils {
             System.out.println(carList.get(i).printCarInfo());
         }
         System.out.println();
+    }
+
+    public void printWinnerList(ArrayList<String> winnerList) {
+        for (int i = 0; i < winnerList.size() - 1; i++) {
+            isNotNullWinner(winnerList.get(i),",");
+        }
+        isNotNullWinner(winnerList.get(winnerList.size()-1),"");
+        System.out.print(RacingGameUtilsContent.WINNER_PRINT);
+    }
+
+    public void isNotNullWinner(String winner, String comma) {
+        if (!winner.isEmpty()){
+            System.out.print(winner+comma);
+        }
     }
 }

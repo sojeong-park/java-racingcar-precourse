@@ -13,8 +13,11 @@ public class Car {
         this.position.checkIncreasePosition(position);
     }
 
-    @Override
-    public String toString() {
-        return name.getName() + ": " + position.changePositionNumberToHyphen().toString();
+    public String getName() {
+        return this.name.getName();
+    }
+
+    public String printCarInfo() {
+        return getName() + ": " + position.changePositionNumberToHyphen().toString();
     }
 }

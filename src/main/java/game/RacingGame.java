@@ -1,9 +1,9 @@
 package game;
 
 import car.Car;
+import car.CarList;
 import utils.RacingGameUtils;
-
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class RacingGame {
     private Names names;
@@ -31,26 +31,12 @@ public class RacingGame {
         this.gameProgressNumber =  new GameProgressNumber(gameProgressNumber);
     }
 
-    public Car[] initGameSetting() {
-        String[] names = this.names.splitNameToArray();
-        Car[] cars = new Car[names.length];
-        for (int i = 0; i < names.length; i++) {
-            cars[i] = new Car(names[i], 1);
-        }
-        return cars;
-    }
-
-    public void insertCarsPosition(Car[] cars) {
-        for (int i = 0; i < cars.length; i++) {
-            cars[i].insertRandomNumber(utils.createRandomNumber());
-        }
-    }
-
     public void startRacingGame() {
-        Car[] cars = initGameSetting();
+        CarList carList = new CarList(this.names.splitNameToArray());
+        ArrayList<Car> cars = carList.getCarList();
         utils.printCarInfo(cars);
         for (int i = 1; i < gameProgressNumber.getGameProgressNumber(); i++) {
-            insertCarsPosition(cars);
+            carList.updateCarListPosition(cars, new RacingGameUtils());
             utils.printCarInfo(cars);
         }
     }

@@ -2,6 +2,7 @@ package utils;
 
 import car.Car;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -35,9 +36,9 @@ public class RacingGameUtils {
         return number >= 0 && number <= 9;
     }
 
-    public void printCarInfo(Car[] cars) {
-        for (int i = 0; i < cars.length; i++) {
-            System.out.println(cars[i].toString());
+    public void printCarInfo(ArrayList<Car> carList) {
+        for (int i = 0; i < carList.size(); i++) {
+            System.out.println(carList.get(i).printCarInfo());
         }
         System.out.println();
     }

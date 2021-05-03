@@ -9,7 +9,10 @@ public class PositionNumber {
     private int position;
 
     public PositionNumber(int position) {
-        setPosition(position);
+        if (position < MIN_LENGTH) {
+            throw new IllegalArgumentException(ExceptionMessage.POSITION_START_NUMBER);
+        }
+        this.position = position;
     }
 
     public int getPosition() {
@@ -17,9 +20,12 @@ public class PositionNumber {
     }
 
     public void setPosition(int position) {
-        if (position < MIN_LENGTH) {
-            throw new IllegalArgumentException(ExceptionMessage.POSITION_START_NUMBER);
-        }
         this.position = position;
+    }
+
+    public void checkIncreasePosition(int randomNumber) {
+        if (randomNumber >= 4) {
+            setPosition(this.position + 1);
+        }
     }
 }

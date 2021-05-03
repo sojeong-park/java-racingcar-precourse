@@ -9,7 +9,7 @@ public class Car {
         this.position = new PositionNumber(position);
     }
 
-    public void insertPosition(int position) {
-        this.position.setPosition(position);
+    public void insertRandomNumber(int position) {
+        this.position.checkIncreasePosition(position);
     }
 }

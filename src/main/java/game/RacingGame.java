@@ -41,7 +41,7 @@ public class RacingGame {
     public void insertCarsPosition(Car[] cars) {
         utils = new RacingGameUtils();
         for (int i = 0; i < cars.length; i++) {
-            cars[i].insertPosition(utils.createRandomNumber());
+            cars[i].insertRandomNumber(utils.createRandomNumber());
         }
     }
 

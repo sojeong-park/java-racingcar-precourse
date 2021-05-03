@@ -34,4 +34,13 @@ class PositionNumberTest {
         positionNumber.checkIncreasePosition(randomNumber);
         assertThat(positionNumber.getPosition()).isEqualTo(resultPosition);
     }
+
+    @DisplayName("position 숫자 하이픈 변경 확인")
+    @ParameterizedTest
+    @CsvSource({"4, '----'", "1, '-'", "6, '------'"})
+    void changePositionNumberToHyphen(int position, String result) {
+        positionNumber.setPosition(position);
+        String hyphen = positionNumber.changePositionNumberToHyphen().toString();
+        assertThat(hyphen).isEqualTo(result);
+    }
 }

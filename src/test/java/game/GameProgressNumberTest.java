@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 class GameProgressNumberTest {
@@ -25,5 +27,13 @@ class GameProgressNumberTest {
             new GameProgressNumber(number);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("게임 진행 회수는 1이상의 숫자만 입력해주세요.");
+    }
+
+    @DisplayName("게임 진행 회수 가져오기")
+    @ParameterizedTest
+    @CsvSource({"5", "4", "2"})
+    void getGameProgressNumber(String progressNumber) {
+        GameProgressNumber number = new GameProgressNumber(progressNumber);
+        assertThat(number.getGameProgressNumber()).isEqualTo(Integer.parseInt(progressNumber));
     }
 }

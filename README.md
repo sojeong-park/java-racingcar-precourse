@@ -13,3 +13,5 @@
 5. 주어진 회수만큼 경주 진행
    - 각 경주마다 결과값 출력시 위치값 hyphen 문자변경 확인
 6. 경주 완료시 우승자 구하기
+   - 최대 position값 추출
+   - 최대 position값을 가진 Car객체의 이름 ArrayList<String> 추출
